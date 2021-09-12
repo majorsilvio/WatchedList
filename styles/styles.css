@@ -1,0 +1,113 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: rgb(253, 233, 229);
+    display: flex;
+    flex-direction: column;
+}
+
+.container{
+    z-index: -1;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.header,
+.list {
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: crimson;
+    font-weight: bold;
+}
+
+.title {
+    flex: 10;
+    font-size: xx-large;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.title,
+.watched-list,.header,
+.list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.page-up,
+.page-down {
+    z-index: 1;
+    position: fixed;
+    width: 100%;
+    color: white;
+    font-size: xx-large;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page-down {
+    bottom: 0;
+}
+
+.arrow-down{
+    animation-name: arrow-down;
+}
+.arrow-down-span {
+    transform: rotate(90deg);
+}
+
+.arrow-up {
+    animation-name: arrow-up;
+}
+
+.arrow-up-span {
+    transform: rotate(-90deg);
+}
+
+.arrow-down,
+.arrow-up {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes arrow-down {
+    from {
+        margin-bottom: 1em;
+    }
+    to {
+        margin-bottom: 0px;
+    }
+}
+
+@keyframes arrow-up {
+    from {
+        margin-top: 1em;
+    }
+    to {
+        margin-top: 0px;
+    }
+}

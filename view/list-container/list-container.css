@@ -1,0 +1,36 @@
+.watched-list{
+    height: 60%;
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 1em;
+    box-shadow: 0px 0px 14px 1px rgba(15,14,15,1);
+}
+
+.country-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 1em;
+    border-radius: 1em 0 0 1em;
+    width: 20%;
+    height: 100%;
+    padding: 2em 0.5em 2em 0.5em;
+}
+
+.country{
+    padding: 0.5em 0 0.5em 0;
+    border-radius: 1em;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.country:hover{
+    box-shadow: 0px 0px 3px 1px rgba(71, 71, 71, 1);
+}
+
+
+.list-container{
+    border-left: 0.5px solid grey;
+}

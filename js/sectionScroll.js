@@ -1,6 +1,6 @@
 $(document).ready(() => {
-    actual = 0;
-    let rollTo;
+    actual = -1;
+    rollTo = '';
     rollDown();
 });
 

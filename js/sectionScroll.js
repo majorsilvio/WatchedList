@@ -10,7 +10,7 @@ $('.page-down').on('click',() => rollDown());
 function rollDown() {
     actual++;
     rollTo = $('.container').children()[actual]?.id
-    rollTo ? roll() : actual--;
+    rollTo ? roll() : (actual = 1 ,rollUp());
 }
 
 function rollUp() {
@@ -21,7 +21,8 @@ function rollUp() {
 }
 
 function roll() {
-    actual <= 0 ? $('.page-up').addClass('hidden') : $('.page-up').removeClass('hidden')
+    actual <= 0 ? $('.page-up').addClass('hidden') : $('.page-up').removeClass('hidden');
+    actual == ($('.container').children().length - 1) ? $('.page-down').addClass('hidden') : $('.page-down').removeClass('hidden');
     if (rollTo) {
         $('html, .container').animate({
             scrollTop: $(`#${rollTo}`)?.offset()?.top

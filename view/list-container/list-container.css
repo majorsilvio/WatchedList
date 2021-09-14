@@ -1,15 +1,16 @@
-.watched-list{
+.watched-list {
     height: 60%;
     width: 70%;
     display: flex;
     flex-direction: row;
     border-radius: 1vh;
     background-color: white;
-    box-shadow: 0px 0px 14px 1px rgba(15,14,15,1);
+    box-shadow: 0px 0px 14px 1px rgba(15, 14, 15, 1);
 }
 
-.country-container{
+.country-container {
     display: flex;
+    flex: 1;
     flex-direction: column;
     justify-content: center;
     row-gap: 2vh;
@@ -19,7 +20,7 @@
     padding: 4vh 0.5vh 4vh 0.5vh;
 }
 
-.country{
+.country {
     text-transform: capitalize;
     font-size: 2.5vh;
     padding: 0.5vh 0 0.5vh 0;
@@ -29,11 +30,37 @@
     cursor: pointer;
 }
 
-.country:hover{
+.country:hover {
     box-shadow: 0px 0px 3px 1px rgba(71, 71, 71, 1);
 }
 
+.list-table {
+    border-collapse: collapse;
+    width: 100%;
+}
 
-.list-container{
+.list-table > td , th,tr {
+    font-size: 2.5vh;
+    border: 1px solid #ddd;
+    padding: 0.5vh;
+    text-align: center;
+}
+
+.list-table tr:nth-child(even){background-color: #f2f2f2;}
+
+.list-table tr:hover {background-color: #ddd;}
+
+.list-table th {
+  padding-top: 1vh;
+  padding-bottom: 1vh;
+  background-color: #ddd; 
+}
+
+.list-container {
+    flex: 4;
     border-left: 0.5px solid grey;
+}
+
+.stars{
+ color: yellow;   
 }

@@ -23,7 +23,7 @@ body::-webkit-scrollbar{
 
 .container {
     z-index: -1;
-    width: 100%;
+    width: 100vw;
     position: absolute;
     display: flex;
     flex-direction: column;

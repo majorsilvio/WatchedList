@@ -1,5 +1,5 @@
 $(document).ready(() => {
-    actual = -1;
+    actual = 0;
     rollTo = '';
     rollDown();
 });

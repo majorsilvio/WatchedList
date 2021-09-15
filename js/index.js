@@ -1,8 +1,6 @@
-$(document).ready(function()
-{
-  $.get("view/list-container/list-container.html", function(html_string)
-   {
-      $('#list').html(html_string);
-   });
-});
-
+$(()=>{
+   $.ajax({
+      url:"view/list-container/list-container.html",
+      success: (page) => $('#list').html(page)
+   })
+})

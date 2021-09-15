@@ -39,7 +39,7 @@
     width: 100%;
 }
 
-.list-table > td , th,tr {
+.list-table > td ,tr {
     font-size: 2.5vh;
     border: 1px solid #ddd;
     padding: 0.5vh;
@@ -51,14 +51,17 @@
 .list-table tr:hover {background-color: #ddd;}
 
 .list-table th {
-  padding-top: 1vh;
-  padding-bottom: 1vh;
-  background-color: #ddd; 
+    position: sticky;
+    top: 0;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    background-color: #ddd; 
 }
 
 .list-container {
     flex: 4;
     border-left: 0.5px solid grey;
+    overflow: auto;
 }
 
 .stars{

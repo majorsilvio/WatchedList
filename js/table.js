@@ -5,7 +5,7 @@ dramaURL = (countryId) => countryURL() + countryId + "/drama";
 
 //html elements
 var $countrysMenu = $('.country-container');
-var $dramaList = $('.list-table > tbody')
+var $dramaList = $('.list-table > tbody')   
 
 //templates
 countrysMenuTemplate = '<div countryId="{{id}}" class="country">{{name}}</div>';
@@ -31,8 +31,12 @@ $(() => {
     })
 })
 
-$countrysMenu.delegate('.country', 'click', (e) => {
-    countryId = e.currentTarget.attributes.countryId.value;
+$countrysMenu.delegate('.country', 'click', function() {
+    if(removeClassAndToggle($(this),'active',true)){
+        $dramaList.empty();
+        return
+    }
+    countryId = $(this).attr('countryId');
     $.ajax({
         type: 'GET',
         url: dramaURL(countryId),
@@ -55,4 +59,23 @@ $countrysMenu.delegate('.country', 'click', (e) => {
             $dramaList.html(list);
         },
     })
+})
+
+function removeClassAndToggle(element,className,sc = false){
+    if(!element.hasClass(className)){
+        $('*').removeClass(className)
+        element.toggleClass(className)
+    }else{
+        if(sc){
+            element.toggleClass(className)
+        }
+        return true
+    }
+}
+
+$dramaList.delegate('tr','click',function(){ 
+    if(removeClassAndToggle($(this),'selected',true)){
+        window.open('https://mydramalist.com');
+    }
+    
 })
